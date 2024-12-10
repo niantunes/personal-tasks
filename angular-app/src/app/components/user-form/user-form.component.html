@@ -1,13 +1,13 @@
 <div>
     <div class="form">
         <h3>register user</h3>
-        <form action="submit">
-            <input type="text" placeholder="name" required>
-            <input type="text" placeholder="lastname" required>
-            <input type="tel" placeholder="phone" required>
-            <input type="email" placeholder="email" required>
-            <input type="email" placeholder="username" required>
-            <input type="password" placeholder="password" required>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+            <input type="text" formControlName="name" placeholder="name">
+            <input type="text" formControlName="lastname" placeholder="lastname">
+            <input type="tel" formControlName="phone" placeholder="phone">
+            <input type="email" formControlName="email" placeholder="email">
+            <input type="email" formControlName="username" placeholder="username">
+            <input type="password" formControlName="password" placeholder="password">
 
             <button type="submit">register</button>
         </form>

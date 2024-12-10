@@ -1,26 +1,4 @@
 services:
-  angular-app:
-    build:
-      context: ./angular-app
-      dockerfile: Dockerfile
-    ports:
-      - "4200:4200"
-    volumes:
-      - ./angular-app:/app
-      - /app/node_modules
-    stdin_open: true
-    tty: true
-
-  # backend:
-  #   build:
-  #     context: ./backend
-  #     dockerfile: Dockerfile
-  #   ports:
-  #     - "3000:3000"
-  #   volumes:
-  #     - ./backend:/app
-  #     - /app/node_modules
-
   mongodb:
     image: mongo:latest
     container_name: mongo
@@ -31,6 +9,32 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
       MONGO_INITDB_ROOT_PASSWORD: password
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+
+  # angular-app:
+  #   build:
+  #     context: ./angular-app
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - "4200:4200"
+  #   volumes:
+  #     - ./angular-app:/app
+  #     - /app/node_modules
+  #   depends_on:
+  #     - backend
+  #   stdin_open: true
+  #   tty: true
 
 volumes:
   mongo-data:

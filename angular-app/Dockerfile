@@ -1,20 +1,24 @@
 # Use a imagem Node.js como base
 FROM node:20
 
-# Diretório de trabalho dentro do container
 WORKDIR /app
 
-# Copie o arquivo de dependências
+# Configura o NPM para ignorar SSL estrito
+RUN npm config set strict-ssl false
+
+# Copiar package.json e package-lock.json
 COPY package*.json ./
 
-# Instale as dependências
-RUN npm install -g @angular/cli && npm install
+# Instalar dependências
+RUN npm install
 
-# Copie o restante do código
+# Copiar código fonte
 COPY . .
 
-# Exponha a porta padrão do Angular
+# Build da aplicação
+RUN npm run build
+
 EXPOSE 4200
 
 # Comando padrão para iniciar o servidor de desenvolvimento
-CMD ["ng", "serve"]
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]

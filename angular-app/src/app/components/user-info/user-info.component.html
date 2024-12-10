@@ -1,13 +1,17 @@
 <div>
     <div class="form">
         <h3>detail user</h3>
-        <form>
-            <input type="text" placeholder="name" readonly>
-            <input type="text" placeholder="lastname" readonly>
-            <input type="tel" placeholder="phone" readonly>
-            <input type="email" placeholder="email" readonly>
-            <input type="email" placeholder="username" readonly>
-            <!-- <input type="password" placeholder="password" readonly> -->
+        <form *ngFor="let user of users">
+            <label>name</label>
+            <input type="text" value="{{user.name}}" readonly>
+            <label>lastname</label>
+            <input type="text" value="{{user.lastname}}" readonly>
+            <label>phone</label>
+            <input type="tel" value="{{user.phone}}" readonly>
+            <label>email</label>
+            <input type="email" value="{{user.email}}" readonly>
+            <label>username</label>
+            <input type="email" value="{{user.username}}" readonly>
         </form>
     </div>
 </div>

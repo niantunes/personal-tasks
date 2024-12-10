@@ -6,4 +6,3 @@ export interface Task {
     priority: 'baixa' | 'média' | 'alta';
     status: 'pendente' | 'concluído';
   }
-  

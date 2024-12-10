@@ -1,13 +1,25 @@
 <div>
-    <div class="form">
-        <h3>register task</h3>
-        <form action="submit">
-            <input type="text" placeholder="subject" required />
-            <input type="datetime-local" placeholder="date" required />
-            <input type="url" placeholder="location" />
-            <textarea placeholder="observation"></textarea>
+  <div class="form">
+    <h3>register task</h3>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <input type="text" formControlName="title" placeholder="title" />
 
-            <button type="submit">register</button>
-        </form>
-    </div>
+      <label>priority</label>
+      <select formControlName="priority">
+        <option value="baixa">Baixa</option>
+        <option value="media">Média</option>
+        <option value="alta">Alta</option>
+      </select>
+
+      <label>status</label>
+      <select formControlName="status">
+        <option value="pendente">Pendente</option>
+        <option value="concluido">Concluído</option>
+      </select>
+
+      <textarea formControlName="description" placeholder="description"></textarea>
+
+      <button type="submit">register</button>
+    </form>
+  </div>
 </div>

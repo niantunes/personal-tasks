@@ -1,11 +1,16 @@
 <div>
     <div class="form">
         <h3>detail task</h3>
-        <form>
-            <input type="text" placeholder="subject" readonly />
-            <input type="datetime-local" placeholder="date" readonly />
-            <input type="url" placeholder="location" readonly />
-            <textarea placeholder="observation" readonly></textarea>
+        <form *ngFor="let task of tasks">
+            <label>title</label>
+            <input type="text" value="{{task.title}}" readonly />
+            <label>priority</label>
+            <input type="text" value="{{task.priority}}" readonly />
+            <label>status</label>
+            <input type="text" value="{{task.status}}" readonly />
+            <label>description</label>
+            <input type="text" value="{{task.description}}" readonly />
+            <button (click)="deleteTask(task.id!)">Excluir</button>
         </form>
     </div>
 </div>

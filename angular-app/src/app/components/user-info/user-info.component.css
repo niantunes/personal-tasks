@@ -43,6 +43,12 @@ div.form form input {
     border-radius: 1;
 }
 
+div.form form label {
+    color: #E8F7FE;
+    text-transform: capitalize;
+    margin-top: 0.5rem;
+}
+
 div.form form button {
     width: 60%;
 
