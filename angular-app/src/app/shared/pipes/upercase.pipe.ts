@@ -1,13 +1,14 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'priority',
+  name: 'upercase',
   standalone: true
 })
 export class PriorityPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: string): string {
+    if (!value) return value;
+    return value.toUpperCase();
   }
 
 }

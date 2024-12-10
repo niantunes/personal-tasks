@@ -5,9 +5,9 @@
             <label>title</label>
             <input type="text" value="{{task.title}}" readonly />
             <label>priority</label>
-            <input type="text" value="{{task.priority}}" readonly />
+            <input type="text" value="{{task.priority | upercase}}" readonly />
             <label>status</label>
-            <input type="text" value="{{task.status}}" readonly />
+            <input type="text" value="{{task.status | upercase}}" readonly />
             <label>description</label>
             <input type="text" value="{{task.description}}" readonly />
             <button (click)="deleteTask(task.id!)">Excluir</button>

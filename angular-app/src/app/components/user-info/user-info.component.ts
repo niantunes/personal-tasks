@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { PhoneFormatPipe } from '../../shared/pipes/phone-format.pipe';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-user-info',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule, 
+    PhoneFormatPipe
+  ],
   templateUrl: './user-info.component.html',
   styleUrl: './user-info.component.css'
 })
