@@ -1,0 +1,65 @@
+header {
+    display: flex; /* Distribui os elementos horizontalmente */
+    justify-content: space-between; /* Coloca a marca à esquerda e o menu à direita */
+    align-items: center; /* Alinha verticalmente no centro */
+
+    background: #E8F7FE;
+    height: 15vh;
+}
+
+.logo img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: contain;
+}
+
+nav {
+    display: flex; /* Alinha os itens do menu horizontalmente */
+    flex-basis: 50%;
+}
+
+nav ul {
+    display: flex;
+    flex-basis: 95%;
+    justify-content: space-between; /* Coloca a marca à esquerda e o menu à direita */
+    
+    list-style: none; /* Remove os marcadores padrão da lista */
+}
+
+nav ul li {
+    text-align: center;
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+nav ul li a {
+    color: #3C4A55;
+    text-decoration: none;
+}
+
+ul .dropdown-menu {
+    display: none;
+}
+
+li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+main {
+    display: block;
+    height: 80vh;
+}
+
+footer {
+    display: flex; /* Ativa o modelo de layout Flexbox */
+    align-items: center; /* Alinha verticalmente no centro */
+    justify-content: center; /* Alinha horizontalmente no centro */
+
+    background: #3C4A55;
+    height: 5vh;
+}
+
+footer p {
+    color: #E8F7FE;
+    font-weight: bolder;
+}
